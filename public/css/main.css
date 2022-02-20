@@ -320,6 +320,42 @@ h2
 {
     display: inline-block;
 }
+.section-gallery .slider-item div
+{
+    display: block;
+    position: relative;
+}
+.section-gallery .slider-item div:before,
+.section-gallery .slider-item div:hover:after{
+    content: '';
+    position: absolute; top: 0; left: 0;
+    z-index: 1;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+.section-gallery .slider-item div:before{
+    background: #221F1FE5;
+    width: 100%;
+    height: 100%;
+}
+.section-gallery .slider-item div:hover:after{
+    content: '';
+    background-image: url('../media/page-1/search-icon.png');
+    position: absolute;
+    top: 50%; left: 50%;
+    margin: -15px 0 0 -15px;
+    width: 30px;
+    height: 30px;
+    background-size: 30px;
+}
+.section-gallery .slider-item div:hover:before,
+.section-gallery .slider-item div:hover:after{
+    opacity: 1;
+    visibility: visible;
+
+}
 .section-gallery .slider-item img
 {
     width: 100%;
@@ -430,4 +466,33 @@ footer .action
 {
     color: black;
 
+}
+
+/* ZOOM */
+.zoomed-img
+{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    background: white;
+    width: 100%;
+    height: 100%;
+}
+
+.zoomed-img img
+{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 50%;
+    height: 50%;
 }

@@ -21,7 +21,6 @@ function btn_plus_minus()
     }
 }
 
-
 $(document).ready(function () {
 
 });
