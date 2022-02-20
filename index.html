@@ -11,14 +11,25 @@
 
     <link href="public/css/main.css" rel="stylesheet">
 
-
+    <script src="public/js/jquery.js"></script>
     <script src="public/js/bootstrap.min.js"></script>
     <script src="public/js/bootstrap.bundle.min.js"></script>
-    <script src="public/js/bootstrap.esm.min.js"></script>
 
     <script src="public/js/main.js"></script>
 </head>
 <body>
+<!-- Иконки -->
+<div hidden>
+    <svg id="plus" width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect y="12.728" width="18" height="18" transform="rotate(-45 0 12.728)" fill="#E31E25"/>
+        <path d="M12.9 17.228L12.9 8.22803M17.4 12.728L8.40002 12.728" stroke="white" stroke-width="1.5"/>
+    </svg>
+    <svg id="minus" width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect y="12.728" width="18" height="18" transform="rotate(-45 0 12.728)" fill="#E31E25"/>
+        <path d="M17.4 12.728L12.9 12.728L8.40002 12.728" stroke="white" stroke-width="1.5"/>
+    </svg>
+</div>
+
 <header class="container-fluid">
     <!-- Верхняя линия -->
     <div class="header header__high-line row container">
@@ -140,75 +151,83 @@
             постамата
         </h2>
 
-        <div class="section-complex__wrapper row">
-            <div class="complex-image col-md">
-                <a href="#" class="prev-page" data-target="slider1"></a>
-                <a href="#" class="next-page" data-target="slider1"></a>
+        <div class="section-complex__wrapper">
+            <div id="firstSlider" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row">
+                            <div class="complex-image col-md-4">
+                                <div class="complex-slider__inner row">
+                                    <div class="col-md-4 align-item-center">
+                                        <img src="public/media/page-1/3.png" alt="" class="img-100">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <img src="public/media/page-1/4.png" alt="" class="img-100">
 
-                <div class="complex-slider__inner slider-inner" data-slides="2">
-                    <div class="slider-item active">
-                        <img src="public/media/page-1/3.png" alt="">
-                    </div>
-                    <div class="slider-item">
-                        <img src="public/media/page-1/4.png" alt="">
-                    </div>
+                                        <button role="button" id="show-complex-details" onclick="btn_plus_minus(this)">
+                                            <svg id="plus" width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <rect y="12.728" width="18" height="18" transform="rotate(-45 0 12.728)" fill="#E31E25"/>
+                                                <path d="M12.9 17.228L12.9 8.22803M17.4 12.728L8.40002 12.728" stroke="white" stroke-width="1.5"/>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
 
-                    <button role="button" id="show-complex-details">
-                        <svg id="plus" width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect y="12.728" width="18" height="18" transform="rotate(-45 0 12.728)" fill="#E31E25"/>
-                            <path d="M12.9 17.228L12.9 8.22803M17.4 12.728L8.40002 12.728" stroke="white" stroke-width="1.5"/>
-                        </svg>
-                        <svg id="minus" width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect y="12.728" width="18" height="18" transform="rotate(-45 0 12.728)" fill="#E31E25"/>
-                            <path d="M17.4 12.728L12.9 12.728L8.40002 12.728" stroke="white" stroke-width="1.5"/>
-                        </svg>
+                            <div class="complex-desc col-md">
+                                <div id="desc-text" class="active">
+                                    <h6><b>1/2</b></h6>
+                                    <h5><b>Модуль управления постаматом</b></h5>
+
+                                    <p></p>
+                                    <div class="secondary">
+                                        <p>Модуль предназначен для управления постаматом, монтажа электроники,
+                                            средств приема оплаты и оборудования.</p>
+
+                                        <p>Имеет две секции. Органы управления занимают 1-2 ячейки, в зависимости
+                                            от комплектации. Оставшиеся ячейки доступны для хранения.</p>
+
+                                        <p>В комплект с изделием входит пакет сопроводительной документации
+                                            — паспорт изделия и руководство по эксплуатации.</p>
+                                    </div>
+                                    <p></p>
+                                    <h5 style="margin: 20px 0;"><b class="red">ГАБАРИТНЫЕ РАЗМЕРЫ:</b></h5>
+                                    <p></p>
+                                    <table>
+                                        <thead>
+                                        <tr>
+                                            <td>Высота, мм</td>
+                                            <td>Ширина, мм</td>
+                                            <td>Глубина, мм</td>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>1988</td>
+                                            <td>760</td>
+                                            <td>520</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                    <p></p>
+                                    <p><b>Возможно изготовление постамата в других габаритных размерах
+                                        по требованию заказчика</b></p>
+                                </div>
+
+                                <div id="desc-img">
+                                    <img src="public/media/page-1/26.png" alt="" class="img-100">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="desc-control">
+                    <button class="carousel-control-prev" type="button" data-bs-target="#firstSlider"  data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     </button>
-                </div>
-            </div>
-
-            <div class="complex-desc col-md">
-
-                <div id="desc-text">
-                    <h6><b>1/2</b></h6>
-                    <h5><b>Модуль управления постаматом</b></h5>
-
-                    <p></p>
-                    <div class="secondary">
-                        <p>Модуль предназначен для управления постаматом, монтажа электроники,
-                            средств приема оплаты и оборудования.</p>
-
-                        <p>Имеет две секции. Органы управления занимают 1-2 ячейки, в зависимости
-                            от комплектации. Оставшиеся ячейки доступны для хранения.</p>
-
-                        <p>В комплект с изделием входит пакет сопроводительной документации
-                            — паспорт изделия и руководство по эксплуатации.</p>
-                    </div>
-                    <p></p>
-                    <h5 style="margin: 20px 0;"><b class="red">ГАБАРИТНЫЕ РАЗМЕРЫ:</b></h5>
-                    <p></p>
-                    <table>
-                        <thead>
-                        <tr>
-                            <td>Высота, мм</td>
-                            <td>Ширина, мм</td>
-                            <td>Глубина, мм</td>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>1988</td>
-                            <td>760</td>
-                            <td>520</td>
-                        </tr>
-                        </tbody>
-                    </table>
-                    <p></p>
-                    <p><b>Возможно изготовление постамата в других габаритных размерах
-                        по требованию заказчика</b></p>
-                </div>
-
-                <div id="desc-img">
-                    <img src="public/media/page-1/26.png" alt="" class="img-100">
+                    <button class="carousel-control-next" type="button" data-bs-target="#firstSlider"  data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    </button>
                 </div>
             </div>
         </div>
@@ -326,15 +345,16 @@
 
                 <p><b>ТСЖ и управляющие компании</b> устанавливают постаматы во дворе или подъезде
                     жилищного комплекса</p>
+
+
+                <a class="btn-red" href="#">
+                    Рассчитать стоимость
+                </a>
             </div>
             <div class="postamats-role__governments-image col-md">
                 <img src="public/media/page-1/6.png" alt="" class="img-100">
             </div>
         </div>
-
-        <a class="btn-red" href="#">
-            Рассчитать стоимость
-        </a>
     </section>
 
     <section class="section section-advantages">
@@ -343,7 +363,7 @@
         <div class="row">
             <div class="col-md">
                 <div class="row">
-                    <div class="col-md-3 align-item-center">
+                    <div class="col-3 align-item-center">
                         <img src="public/media/page-1/7.png" alt="">
                     </div>
                     <div class="offset-md-1 col-md-5">Производство в России;</div>
@@ -351,7 +371,7 @@
             </div>
             <div class="col-md">
                 <div class="row">
-                    <div class="col-md-3 align-item-center">
+                    <div class="col-3 align-item-center">
                         <img src="public/media/page-1/8.png" alt="">
                     </div>
                     <div class="offset-md-1 col-md-5">Быстрая доставка;</div>
@@ -359,7 +379,7 @@
             </div>
             <div class="col-md">
                 <div class="row">
-                    <div class="col-md-3 align-item-center">
+                    <div class="col-3 align-item-center">
                         <img src="public/media/page-1/9.png" alt="">
                     </div>
                     <div class="offset-md-1 col-md-5">Оплата в рублях;</div>
@@ -367,7 +387,7 @@
             </div>
             <div class="col-md">
                 <div class="row">
-                    <div class="col-md-3 align-item-center">
+                    <div class="col-3 align-item-center">
                         <img src="public/media/page-1/10.png" alt="">
                     </div>
                     <div class="offset-md-1 col-md-5">Индивидуальные решения.</div>
@@ -383,20 +403,36 @@
             <a href="#" class="prev-page" data-target="slider1"></a>
             <a href="#" class="next-page" data-target="slider1"></a>
 
-            <div class="gallery-slider__inner slider-inner">
-                <div class="slider-item begin">
-                    <img src="public/media/page-1/11.png" alt="">
-                </div>
-                <div class="slider-item">
-                    <img src="public/media/page-1/12.png" alt="">
-                </div>
-                <div class="slider-item">
-                    <img src="public/media/page-1/13.png" alt="">
-                </div>
-                <div class="slider-item">
-                    <img src="public/media/page-1/14.png" alt="">
+
+        </div>
+
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="gallery-slider__inner slider-inner">
+                        <div class="slider-item">
+                            <img src="public/media/page-1/11.png" alt="">
+                        </div>
+                        <div class="slider-item">
+                            <img src="public/media/page-1/12.png" alt="">
+                        </div>
+                        <div class="slider-item">
+                            <img src="public/media/page-1/13.png" alt="">
+                        </div>
+                        <div class="slider-item">
+                            <img src="public/media/page-1/14.png" alt="">
+                        </div>
+                    </div>
                 </div>
             </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"  data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Предыдущий</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"  data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Следующий</span>
+            </button>
         </div>
     </section>
 

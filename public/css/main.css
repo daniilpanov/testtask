@@ -1,4 +1,30 @@
 /* -- HELPERS -- */
+.carousel-control-prev
+{
+    left: -20px;
+    width: auto !important;
+}
+.carousel-control-prev-icon
+{
+    width: 30px !important;
+    height: 30px !important;
+    background-image: url("../media/page-1/arrow-left.png");
+}
+.carousel-control-next
+{
+    right: -20px;
+    width: auto !important;
+}
+.carousel-control-next-icon
+{
+    width: 30px !important;
+    height: 30px !important;
+    background-image: url("../media/page-1/arrow-right.png");
+}
+.carousel-inner
+{
+    margin: 0 60px;
+}
 .btn-red, .btn-red:hover
 {
     padding: 12px 19px;
@@ -153,6 +179,18 @@ h2
     margin-left: 74px;
 }
 
+.section-complex-text .carousel-control-next
+{
+    top: 40%;
+    left: -20px !important;
+    right: auto !important;
+    bottom: auto;
+}
+.section-complex-text .carousel-control-prev
+{
+    top: 50%;
+    bottom: auto;
+}
 .section-complex-text__wrapper h5
 {
     margin: 100px 0 40px;
@@ -160,6 +198,19 @@ h2
 .section-complex-text__wrapper .row
 {
     margin: 50px 0;
+}
+.desc-control
+{
+    height: 100%;
+    display: grid;
+    width: auto;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr;
+    align-items: center;
+}
+.complex-desc
+{
+    margin-left: 90px;
 }
 .complex-desc table
 {
@@ -195,6 +246,27 @@ h2
 {
     color: black;
 }
+#show-complex-details
+{
+    position: absolute;
+    display: inline-block;
+    margin: 50% 50% 25% 25%;
+    border: 0;
+    background: transparent;
+}
+#desc-text, #desc-img
+{
+    display: none;
+}
+#desc-text.active, #desc-img.active
+{
+    display: block;
+}
+#desc-img img
+{
+    height: 100%;
+    width: auto;
+}
 
 .section-postamats-role
 {
@@ -220,6 +292,11 @@ h2
 {
     width: 30%;
 }
+.postamats-role__governments-desc a.btn-red
+{
+    display: inline-block;
+    margin-top: 100px;
+}
 .postamats-role__business-desc, .postamats-role__governments-image
 {
     margin-left: 189px;
@@ -232,13 +309,18 @@ h2
     width: 100%;
 }
 
-.slider .slider-item
+.section-gallery .slider-inner
 {
-    width: 20%;
-    display: inline-block;
-    margin: 20px;
+    width: calc(100% - 22px * 4);
+    display: grid;
+    grid-template-columns: repeat(4, 22%);
+    gap: 22px;
 }
-.slider .slider-item img
+.section-gallery .slider-item
+{
+    display: inline-block;
+}
+.section-gallery .slider-item img
 {
     width: 100%;
     height: auto;
